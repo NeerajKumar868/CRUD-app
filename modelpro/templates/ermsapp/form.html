@@ -1,0 +1,54 @@
+{% extends 'ermsapp/base.html' %}
+
+<div>
+    {% block content %}
+
+    <div class="container">
+
+        {% if action == "Save" %}
+            <form action="save" method="POST">
+        {% elif action == "Update" %}
+            <form action="/ermsapp/update" method="POST">
+        {% endif %}
+
+                {% csrf_token %}
+                <form>
+
+                    <div class="mb-3">
+                        <label for="Eid" class="form-label">PLAYER ID</label>
+                        <input type="text" class="form-control" width="25px" name="empId" id="Eid" value="{{emp_obj.EmpID}}">
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label for="Ename" class="form-label">PLAYER NAME</label>
+                        <input type="text" class="form-control" name="empName" id="Ename" value="{{emp_obj.EmpName}}">
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label for="Esalary" class="form-label">SALARY</label>
+                        <input type="text" class="form-control"  name="empSalary" id="Esalary" value="{{emp_obj.EmpSalary}}">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="Eteam" class="form-label">TEAM</label>
+                        <input type="text" class="form-control" name="empTeam" id="Eteam" value="{{emp_obj.EmpTeam}}">
+                    </div>
+
+                    <div class="mb-3" align="center">
+                        <input type="submit" value="{{action}}" >
+
+                    </div>
+
+                    
+                </form>
+
+    </div>
+
+    {% endblock content %}
+
+</div>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'css\bootstrap.min.css' %}">
+
+    <title>ERMS-App{% block title %} {% endblock title %}</title>
+
+
+    <style>
+      a{
+        text-decoration: none;
+        font-size: 24px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color:slateblue;
+        font-weight: bolder;
+        color: aliceblue;
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                      <img src="{% static 'img\logo.png' %}" alt="" width="50" height="40" class="d-inline-block align-text-top">
+                      ERMS SYSTEM
+                    </a>
+                  </div>
+                <div class="container"><nav class="navbar navbar-dark bg-dark">
+                    <div class="container-fluid">
+                      <form class="d-flex">
+                        <input class="form-control bg-light me-2" type="search" placeholder="Search by name.." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                    </div>
+                  </nav>
+                </div>
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+
+    </header>
+<header align="center" style="margin-top: 3px;"  >
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-success"><a href="/ermsapp/home">Employees</a></button><BR><BR>&nbsp;&nbsp;
+        <button type="button" class="btn btn-warning"><a href="/ermsapp/save">Add Employees</a></button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger"><a href="/ermsapp/deleteAll">Delete all Employees</a></button>&nbsp;&nbsp;
+      </div>
+</header>
+
+<div class="container">
+<header align="center" style="margin-top: 10px;" >
+  <div class="alert alert-primary" role="alert">
+      <h2>♦♦♦  EMPLOYEES LIST  ♦♦♦</h2> 
+  </div>
+  </header>
+</div>
+
+{% block content %}
+    
+{% endblock content %}
+
+
+
+
+
+
+
+
+  <script src="{% static 'js\bootstrap.min.js' %}" ></script>
+
+
+</body>
+
+</html>
+<!-- makemigration is resposible for creating qury if any error it will throgh an errro -->
